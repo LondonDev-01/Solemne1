@@ -22,7 +22,7 @@ services:
     image: londresdev/backend:latest
     container_name: backend
     build:
-      context: ./Test01/Test01
+      context: ./backend/Test01
     
     ports:
       - "6789:6789"
@@ -37,7 +37,7 @@ services:
     image: londresdev/frontend:latest
     container_name: frontend
     build:
-      context: ./test02 
+      context: ./frontend 
     ports:
       - "9876:9876"
     depends_on:
