@@ -22,7 +22,7 @@ services:
     image: londresdev/backend:latest
     container_name: backend
     build:
-      context: ./backend/Test01
+      context: ./backend
     
     ports:
       - "6789:6789"
