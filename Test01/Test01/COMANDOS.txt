@@ -1,0 +1,9 @@
+Comando para crear la base de datos:
+createdb -U postgres bus
+Comandos github:
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/BenjaProject/Solemne1AppsWeb.git
+git push -u origin main

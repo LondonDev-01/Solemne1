@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenedor Remedios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Mantenedor Remedios</h1>
+        <a th:href="@{/crud/remedio/nuevo}" class="btn btn-primary">Nuevo Remedio</a>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nombre Cientifico</th>
+                <th>Marca</th>
+                <th>Gramos</th>
+                <th>Anio</th>
+                <th>Tipo</th>
+                <th>Controlado</th>
+
+                <th style="width: 200px;">ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="r : ${remedio}">
+                <td th:text="${r.nombreCientifico}"></td>
+                <td th:text="${r.marca}"></td>
+                <td th:text="${r.gramos}"></td>
+                <td th:text="${r.anio}"></td>
+                <td th:text="${r.tipo}"></td>
+                <td th:text="${r.controlado}"></td>
+                <td>
+                    <a class="btn btn-warning btn-sm" th:href="@{/crud/remedio/{id}/editar(id=${r.id})}">Editar</a>
+                    
+                    <a class="btn btn-danger btn-sm" 
+                       th:href="@{/crud/remedio/eliminar/{id}(id=${r.id})}"
+                       onclick="return confirm('¿Estás seguro de eliminar a este remedio?')">Borrar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
